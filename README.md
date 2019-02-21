@@ -1,5 +1,5 @@
 # SAP-ABAP-Utilities
-SAP ABAP Utilities codes
+SAP ABAP Utility objects!
 
 ## BDC Object
 
@@ -13,8 +13,9 @@ Usability of class *ZCL_ABAP_UTIL_BDC* is demonstrated in report program *ZREPOR
 
 #### Tips
 
-To use the *APPEND* method like old version as a PERFORM like, include the macro below in your code:
-OBS: Using macro isn`t allow you to call methods that returns a value of importing parameter *IM_NAM* or *IM_VAL*. Use the conventional *APPEND* method call to do it with this approarch.
+To use the *APPEND* method like old version as a PERFORM, and to turn your code more readable, just include the macro below in your code:
+
+OBS: Macro usage does not allow you to call methods that returns value at importing parameters, like *IM_NAM* or *IM_VAL*. Use the conventional *APPEND* method call to do it with this approarch.
 
 ##### Macro Declaration:
 ```
