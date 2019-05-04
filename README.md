@@ -58,3 +58,36 @@ m_append:
   im_val = |<VALUE>{ lv_complement }|
 ).
 ```
+
+## TVARV Object
+
+Usability of class [<ZCL_ABAP_UTIL_TVARV>](/tvarv/src/zcl_abap_util_tvarv) is demonstrated in report program [<ZREPORT_TVARV_EXAMPLE1>](/tvarv/zreport_tvarv_example1.abap).
+
+### Advantages:
+- Validation of variant name at runtime;
+- No declaration needed for variant data container;
+- No declaration needed for simple parameters check;
+- Multiple parameters selection with a separator
+- Expression on IF statement;
+- Clean code.
+
+##### Add new variant example:
+```
+"Add new variants to our TVARV Object
+DATA lo_tvarv TYPE REF TO zcl_abap_util_tvarv.
+
+CREATE OBJECT lo_tvarv.
+lo_tvarv->add_variant( im_name = 'TVARV_PARAMETER_NAME_1' ).
+
+"Handling exceptions
+lo_tvarv->add_variant(
+  EXPORTING
+    im_name = 'TVARV_PARAMETER_NAME_2'
+  EXCEPTIONS
+    inconsistent = 1
+    not_found    = 2
+).
+IF sy-subrc <> 0.
+  "Workaround...
+ENDIF.
+```
