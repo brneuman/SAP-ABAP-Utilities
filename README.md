@@ -3,7 +3,7 @@ SAP ABAP Utility objects!
 
 ## BDC Object
 
-Usability of class *ZCL_ABAP_UTIL_BDC* is demonstrated in report program *ZREPORT_BDC_EXAMPLE1*.
+Usability of class *ZCL_ABAP_UTIL_BDC* is demonstrated in report program [<ZREPORT_BDC_EXAMPLE1>](SAP-ABAP-Utilities/bdc/zreport_bdc_example1.abap).
 
 ### Advantages:
 - Validation of Transaction Code at runtime;
