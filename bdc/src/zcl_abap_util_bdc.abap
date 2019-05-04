@@ -71,7 +71,7 @@ CLASS zcl_abap_util_bdc DEFINITION
 
     CONSTANTS co_msgid_bdc               TYPE symsgid VALUE 'ZABAP_UTIL_BDC' ##NO_TEXT. "@SE93 Message Class
     CONSTANTS co_msgty_on_exception      TYPE symsgty VALUE 'E'              ##NO_TEXT. "Message type on exceptions
-    CONSTANTS co_msgno_tcode_not_exists  TYPE symsgno VALUE '000'            ##NO_TEXT. "@SE93-ZABAP_UTIL_BDC 000 = "TransaÁ„o & n„o existente no sistema."
+    CONSTANTS co_msgno_tcode_not_exists  TYPE symsgno VALUE '000'            ##NO_TEXT. "@SE93-ZABAP_UTIL_BDC 000 = "Transa√ß√£o & n√£o existente no sistema."
     CONSTANTS co_msgno_batchinput_failed TYPE symsgno VALUE '001'            ##NO_TEXT. "@SE93-ZABAP_UTIL_BDC 001 = "Erro encontrado no retorno do Batch Input."
 
 * Mandatory macro to call method "APPEND" like old version with perform
@@ -142,19 +142,19 @@ CLASS ZCL_ABAP_UTIL_BDC IMPLEMENTATION.
 
 * LOGIC SECTION ------------------------------- //
 
-    "Verifica se transaÁ„o existe
+    "Verifica se transa√ß√£o existe
     SELECT COUNT( * ) UP TO 1 ROWS
       FROM tstc
       WHERE tcode = im_tcode.
 
     "Tratamento de erro
     IF sy-subrc <> 0.
-      "TransaÁ„o & n„o existente no sistema.
+      "Transa√ß√£o & n√£o existente no sistema.
       MESSAGE ID co_msgid_bdc TYPE co_msgty_on_exception
       NUMBER co_msgno_tcode_not_exists WITH im_tcode RAISING invalid_tcode.
     ENDIF.
 
-    "ConfiguraÁ„o dos par‚metros
+    "Configura√ß√£o dos par√¢metros
     me->v_tcode = im_tcode.
     me->s_ctu_params-dismode  = im_dismode.
     me->s_ctu_params-updmode  = im_updmode.
