@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>_APPEND_VALUES</title>
+</head>
+<body bgcolor="#FFFFE0">
+<font size="3" face = "Arial" color="#000000"><b>Code listing for: _APPEND_VALUES</b></font>
+<br>
+<font size="3" face = "Arial" color="#000000"><b>Description:  Insere valores pelo nome</b></font>
+<hr>
+<pre width="100">
+<font color ="#0000FF">***********************************************************************</font>
+<font color ="#0000FF">*   Method attributes.           *</font>
+<font color ="#0000FF">***********************************************************************</font>
+Instantiation: Private
+<font color ="#0000FF">***********************************************************************</font>
+
+  METHOD _append_values.
+
+<font color ="#0000FF">* DEFINITION SECTION -------------------------- //</font>
+
+    DATA: lv_prefix TYPE tvarvc-name,
+          lv_sufix  TYPE tvarvc-name.
+
+    FIELD-SYMBOLS: &lt;t_tvarvc&gt; TYPE STANDARD TABLE.
+    FIELD-SYMBOLS: &lt;ls_main&gt;  LIKE LINE OF t_main[].
+
+<font color ="#0000FF">* LOGIC SECTION ------------------------------- //</font>
+
+    READ TABLE me-&gt;t_main[] ASSIGNING &lt;ls_main&gt; WITH KEY fullname = im_variant_data-name
+                                                         type     = im_variant_data-type.
+    IF sy-subrc &lt;&gt; 0.
+      APPEND INITIAL LINE TO me-&gt;t_main[] ASSIGNING &lt;ls_main&gt;.
+      &lt;ls_main&gt;-fullname = im_variant_data-name.
+
+      &lt;ls_main&gt;-prefix   = me-&gt;_get_variant_prefix( im_variant_name      = im_variant_data-name
+                                                    im_variant_separator = im_variant_separator ).
+
+      &lt;ls_main&gt;-sufix    = me-&gt;_get_variant_sufix(  im_variant_name      = im_variant_data-name
+                                                    im_variant_separator = im_variant_separator ).
+
+      &lt;ls_main&gt;-type     = im_variant_data-type.
+
+      CREATE DATA &lt;ls_main&gt;-data_ref TYPE STANDARD TABLE OF tvarvc.
+    ENDIF.
+
+    ASSIGN &lt;ls_main&gt;-data_ref-&gt;* TO &lt;t_tvarvc&gt;.
+    APPEND im_variant_data TO &lt;t_tvarvc&gt;[].
+
+  ENDMETHOD.                    "_append_values
+</pre>
+<hr>
+<font size="2" face = "Sans Serif">Extracted by Direct Download Enterprise version 1.3.1 - E.G.Mellodew. 1998-2005 UK. Sap Release 731
+</font>
+</body>
+</html>

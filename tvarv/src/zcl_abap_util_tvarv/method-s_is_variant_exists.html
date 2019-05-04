@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>S_IS_VARIANT_EXISTS</title>
+</head>
+<body bgcolor="#FFFFE0">
+<font size="3" face = "Arial" color="#000000"><b>Code listing for: S_IS_VARIANT_EXISTS</b></font>
+<br>
+<font size="3" face = "Arial" color="#000000"><b>Description:  Retorna verdadeiro caso exista a variante (estático)</b></font>
+<hr>
+<pre width="100">
+<font color ="#0000FF">***********************************************************************</font>
+<font color ="#0000FF">*   Method attributes.           *</font>
+<font color ="#0000FF">***********************************************************************</font>
+Instantiation: Public
+<font color ="#0000FF">***********************************************************************</font>
+
+  METHOD s_is_variant_exists.
+
+<font color ="#0000FF">* DEFINITION SECTION -------------------------- //</font>
+
+<font color ="#0000FF">* LOGIC SECTION ------------------------------- //</font>
+
+    SELECT COUNT( * ) UP TO 1 ROWS
+      FROM tvarvc
+      WHERE name = im_name.
+
+    IF sy-subrc = 0.
+      re_value = abap_true.
+    ENDIF.
+
+  ENDMETHOD.                    "S_IS_VARIANT_EXISTS
+</pre>
+<hr>
+<font size="2" face = "Sans Serif">Extracted by Direct Download Enterprise version 1.3.1 - E.G.Mellodew. 1998-2005 UK. Sap Release 731
+</font>
+</body>
+</html>
