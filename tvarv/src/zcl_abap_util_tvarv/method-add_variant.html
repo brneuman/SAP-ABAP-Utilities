@@ -63,6 +63,7 @@ Instantiation: Public
     SELECT *
       FROM tvarvc
       INTO TABLE lt_tvarvc[]
+      BYPASSING BUFFER
       WHERE (lt_where).
 
     " Check results
