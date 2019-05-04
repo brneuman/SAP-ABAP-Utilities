@@ -154,6 +154,18 @@ ELSE.
 ENDIF.
 ```
 
+##### Using static methods to get the newest value from Database (bypass buffer)
+```
+" Parameters:                             | Values:
+" 'TVARV_PARAMETER_NAME_1-ACTIVE'         | 'X'
+
+IF zcl_abap_util_tvarv=>s_is_value_exists( im_name = 'ROUTINE-ACTIVE' im_value = abap_true ) = abap_true.
+  "Process...
+ELSE.
+  EXIT.
+ENDIF.
+```
+
 ##### SAP ABAP 7.40 facilities
 ```
 "Add new variants to our TVARV Object
