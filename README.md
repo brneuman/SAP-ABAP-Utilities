@@ -78,21 +78,21 @@ o_async_handler->start_tasks( ).
 ### Async setups
 
 - Set job owner
-Default: current user -> ```SY-UNAME```.
+  - Default: current user -> ```SY-UNAME```.
 ```
 o_async_handler->set_job_owner( 'SCHEDULER' ).
 ```
 
 - Set server group
-Mandatory for paralell processing ( using method ```START_TASKS( )```.
-Reference: [RZLLITAB](https://www.se80.co.uk/saptables/r/rzll/rzllitab.htm).
+  - Mandatory for paralell processing ( using method ```START_TASKS( )```.
+  - Reference: [RZLLITAB](https://www.se80.co.uk/saptables/r/rzll/rzllitab.htm).
 ```
 o_async_handler->set_server_group( 'parallel_executors' ).
 ```
 
 - Set timeout
-Optional for paralell processing  ( using method ```START_TASKS( )``` ).
-Default: 120 seconds.
+  - Optional for paralell processing  ( using method ```START_TASKS( )``` ).
+  - Default: 120 seconds.
 ```
 o_async_handler->set_timeout( 600 ). "10 minutes
 ```
