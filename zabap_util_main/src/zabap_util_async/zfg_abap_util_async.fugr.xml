@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Grupo de funções executor de tarefas</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFG_ABAP_UTIL_ASYNCTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFG_ABAP_UTIL_ASYNC</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFM_ABAP_UTIL_ASYNC_EXECUTOR</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Executor de tarefas assíncronas.</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>T_TASK_SERIAL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>Z_ABAP_UTIL_T_TASK_SERIAL</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>V_TASK_SERIAL</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EX_TASK_SERIAL</PARAMETER>
+       <TYP>Z_ABAP_UTIL_T_TASK_SERIAL</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RFCSI_EXPORT</PARAMETER>
+       <TYP>RFCSI</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>T_TASK_SERIAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ABAP Util: Task serial table</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>V_TASK_SERIAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ABAP Util: Task serial variable</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EX_TASK_SERIAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ABAP Util: Task serial</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RFCSI_EXPORT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Sistema info RFC (vide sistema_RFC_INFO_mód.de função)</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

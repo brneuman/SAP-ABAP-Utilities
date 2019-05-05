@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>ABAP Util: TVARV</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <WITH_UNIT_TESTS>X</WITH_UNIT_TESTS>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>M01</KEY>
+     <ENTRY>Variant name is initial</ENTRY>
+     <LENGTH>23</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>M02</KEY>
+     <ENTRY>Variant does not exists</ENTRY>
+     <LENGTH>23</LENGTH>
+    </item>
+   </TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>ADD_VARIANT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Adicionar variante</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>CO_VARI_TYPE_PARAM</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>CO_VARI_TYPE_SELOPT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo opções de seleção</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>FREE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Limpa a memória de variantes armazenadas</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>GET_PARAMETER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorna parâmetro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>GET_RANGE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorna intervalo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>IS_VALUE_EXISTS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorna verdadeiro caso exista o valor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>S_GET_PARAMETER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorna parâmetro (estático)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>S_GET_RANGE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorna intervalo (estático)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>S_IS_VALUE_EXISTS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorna verdadeiro caso exista o valor (estático)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>S_IS_VARIANT_EXISTS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorna verdadeiro caso exista a variante (estático)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>_APPEND_VALUES</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Insere valores pelo nome</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>_GET_CONDITION</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorna condição pelo nome</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>_GET_VARIANT_PREFIX</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorna prefixo do nome</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>_GET_VARIANT_SUFIX</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Retorna sufixo do nome</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_ABAP_UTIL_TVARV</CLSNAME>
+     <CMPNAME>_S_FILL_RANGE_HELPER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Carrega tabela de intervalo</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
