@@ -101,7 +101,7 @@ o_async_handler->set_timeout( 600 ). "10 minutes
 
 Check the explanation below of [TVARV Object](src/zabap_util_tvarv/).
 
-##### Add new variant:
+### Add new variant:
 ```
 "Add new variants to our TVARV Object
 DATA lo_tvarv TYPE REF TO zcl_abap_util_tvarv.
@@ -125,7 +125,7 @@ IF sy-subrc <> 0.
 ENDIF.
 ```
 
-##### Add multiple variants
+### Add multiple variants
 ```
 "Add new variants to our TVARV Object
 DATA: lo_tvarv  TYPE REF TO zcl_abap_util_tvarv.
@@ -143,7 +143,7 @@ lv_active = lo_tvarv->get_parameter( 'ACTIVE' ).
 lv_email  = lo_tvarv->get_parameter( 'EMAIL' ).
 ```
 
-##### Simple checks with boolean value from method for a PARAMETER variant type
+### Simple checks with boolean value from method for a PARAMETER variant type
 ```
 "Add new variants to our TVARV Object
 DATA: lo_tvarv TYPE REF TO zcl_abap_util_tvarv.
@@ -164,7 +164,7 @@ ELSE.
 ENDIF.
 ```
 
-##### Simple checks with boolean value from method for RANGE variant type
+### Simple checks with boolean value from method for RANGE variant type
 ```
 "Add new variants to our TVARV Object
 DATA: lo_tvarv TYPE REF TO zcl_abap_util_tvarv.
@@ -185,7 +185,7 @@ ELSE.
 ENDIF.
 ```
 
-##### Using static methods to get the newest value from Database (bypass buffer)
+### Using static methods to get the newest value from Database (bypass buffer)
 ```
 " Parameters:                             | Values:
 " 'TVARV_PARAMETER_NAME_1-ACTIVE'         | 'X'
@@ -197,7 +197,7 @@ ELSE.
 ENDIF.
 ```
 
-##### SAP ABAP 7.40 facilities
+### SAP ABAP 7.40 facilities
 ```
 "Add new variants to our TVARV Object
 DATA: lo_tvarv TYPE REF TO zcl_abap_util_tvarv.
@@ -224,13 +224,13 @@ ENDIF.
 
 Check the explanation below of [BDC Object](src/zabap_util_bdc/).
 
-#### Tips
+### Tips
 
 To use the *APPEND* method like the old version as a *PERFORM*, and to turn your code more readable, just include the macro below in your code:
 
 OBS: Macro usage does not allow you to call methods that return value at importing parameters, like *IM_NAM* or *IM_VAL*. Use the conventional *APPEND* method call to do it with this approach.
 
-##### Macro Declaration:
+### Macro Declaration:
 ```
 DEFINE m_append.
 
@@ -243,7 +243,7 @@ DEFINE m_append.
 END-OF-DEFINITION.
 ```
 
-##### Macro Utilization example:
+### Macro Utilization example:
 ```
 "Basic FB03 BDC
 m_append:
@@ -254,7 +254,7 @@ m_append:
   ' '  'BDC_OKCODE'   '/00'
 ```
 
-##### Dynamic parameter values with return method data example:
+### Dynamic parameter values with return method data example:
 ```
 <your_bdc_object_name>->append( 
   im_dbg = 'X' 
@@ -263,7 +263,7 @@ m_append:
 ).
 ```
 
-##### SAP ABAP 7.40 facilities
+### SAP ABAP 7.40 facilities
 ```
 <your_bdc_object_name>->append( 
   im_dbg = 'X' 
