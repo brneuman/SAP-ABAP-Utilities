@@ -28,10 +28,15 @@ Check the explanation below of [Async Handler](src/zabap_util_async/).
 
 3. Implement your logic into interface methods: ```ZIF_ABAP_UTIL_ASYNC_TASK~EXECUTE_TASK``` and ```ZIF_ABAP_UTIL_ASYNC_TASK~GET_DATA``` (if your logic expects a result data).
 
-4. Create Async Handler Object and add your tasks:
+4. Create Async Handler Object and add your tasks.
+
+### Example
+
+Running 3 objects asyncronously, ```o_task1``` to send e-mails, ```o_task2``` to load data and ```o_task3``` to update a table.
+
 ```
 " Async Handler Object
-DATA: o_async_handler TYPE REF TO zcl_abap_util_async_handler,
+DATA: o_async_handler TYPE REF TO zcl_abap_util_async_handler.
 
 " Interface Task
 DATA: o_task  TYPE REF TO zif_abap_util_async_task.
@@ -56,16 +61,41 @@ o_task ?= o_task3.
 o_async_handler->add_new_task ( im_id_full = 'TASK3' im_task = o_task ).
 ```
 
-  4.1. Run your Tasks via Job
-  ```
-  o_async_handler->start_jobs( ).
-  ```
+- Run your Tasks via Job:
+```
+o_async_handler->start_jobs( ).
+```
 
-  4.2. Run your Tasks expecting callback
-  ```
-  SET HANDLER my_callback_method FOR o_async_handler.
-  o_async_handler->start_tasks( ).
-  ```
+- Run your Tasks expecting callback:
+```
+"Setup your server group to run paralell tasks
+o_async_handler->set_server_group( 'YOUR_SERVER_GROUP_NAME' ).
+  
+SET HANDLER your_callback_method FOR o_async_handler.
+o_async_handler->start_tasks( ).
+```
+
+### Async setups
+
+- Set job owner
+Default: current user -> ```SY-UNAME```.
+```
+o_async_handler->set_job_owner( 'SCHEDULER' ).
+```
+
+- Set server group
+Mandatory for paralell processing ( using method ```START_TASKS( )```.
+Reference: [RZLLITAB](https://www.se80.co.uk/saptables/r/rzll/rzllitab.htm).
+```
+o_async_handler->set_server_group( 'parallel_executors' ).
+```
+
+- Set timeout
+Optional for paralell processing  ( using method ```START_TASKS( )``` ).
+Default: 120 seconds.
+```
+o_async_handler->set_timeout( 600 ). "10 minutes
+```
 
 ## TVARV Object Usage
 
