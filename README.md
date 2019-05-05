@@ -1,9 +1,9 @@
 # SAP-ABAP-Utilities
 My SAP ABAP Utility objects repository.
 
-- [SAP ABAP Async Handler](src/zabap_util_async/)
-- [SAP ABAP TVARV Object](src/zabap_util_tvarv/)
-- [SAP ABAP BDC Object](src/zabap_util_bdc/)
+- [SAP ABAP Async Handler](zabap_util_main/src/zabap_util_async/)
+- [SAP ABAP TVARV Object](zabap_util_main/src/zabap_util_tvarv/)
+- [SAP ABAP BDC Object](zabap_util_main/src/zabap_util_bdc/)
 
 # Table of Contents
 
@@ -18,7 +18,7 @@ You must implement ZABAPGIT program into your SAP System to import this reposito
 
 ## Async Handler Usage
 
-Check the explanation below of [Async Handler](src/zabap_util_async/).
+Check the explanation below of [Async Handler](zabap_util_main/src/zabap_util_async/).
 
 ### Pre requisites
 
@@ -99,7 +99,7 @@ o_async_handler->set_timeout( 600 ). "10 minutes
 
 ## TVARV Object Usage
 
-Check the explanation below of [TVARV Object](src/zabap_util_tvarv/).
+Check the explanation below of [TVARV Object](zabap_util_main/src/zabap_util_tvarv/).
 
 ### Add new variant:
 ```
@@ -222,7 +222,7 @@ ENDIF.
 
 ## BDC Object Object
 
-Check the explanation below of [BDC Object](src/zabap_util_bdc/).
+Check the explanation below of [BDC Object](zabap_util_main/src/zabap_util_bdc/).
 
 ### Tips
 
